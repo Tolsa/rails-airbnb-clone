@@ -1,10 +1,10 @@
 class SpaceshipsController < ApplicationController
 
-def index
-end
+  def index
+    @spaceships = Spaceship.all
+  end
 
-def show
+  def show
+    @spaceship = Spaceship.find(params[:id])
+  end
 end
-
-end
-
