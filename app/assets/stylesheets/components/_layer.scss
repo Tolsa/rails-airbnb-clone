@@ -1,0 +1,21 @@
+.homepage_layer {
+  display: flex;
+  background-color: black;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #C1C1C1;
+}
+
+.layer_images {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 75%;
+  margin: 50px;
+  margin-top: 30px;
+}
+
+.homepage_layer_title {
+  margin-top: 35px;
+}
