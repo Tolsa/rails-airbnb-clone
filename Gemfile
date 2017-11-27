@@ -18,6 +18,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'faker'
 gem 'devise'
+gem 'cloudinary'
+gem 'carrierwave', '~> 1.2'
 
 group :development, :test do
   gem 'pry-byebug'
