@@ -9,6 +9,7 @@
 require 'faker'
 
 20.times do
-  Starship.create(name: Faker::StarWars.vehicle)
+  Spaceship.create(name: Faker::StarWars.vehicle)
 end
+
 
