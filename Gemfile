@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 ruby '2.3.5'
 
+gem 'devise'
+
 gem 'figaro'
 gem 'jbuilder', '~> 2.0'
 gem 'pg'
@@ -15,6 +17,7 @@ gem 'sass-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
+gem 'faker'
 
 group :development, :test do
   gem 'pry-byebug'
