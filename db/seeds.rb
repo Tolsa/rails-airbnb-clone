@@ -8,8 +8,8 @@
 
 require 'faker'
 
-20.times do
-  Spaceship.create(name: Faker::StarWars.vehicle)
+50.times do
+  User.create(email:Faker::Internet.email , password:Faker::Internet.password(8) )
 end
 
-
+# Spaceship.create(name: Faker::StarWars.vehicle, )
