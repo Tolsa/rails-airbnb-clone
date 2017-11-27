@@ -12,3 +12,4 @@ require 'faker'
   Spaceship.create(name: Faker::StarWars.vehicle)
 end
 
+
