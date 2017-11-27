@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  power: MyString
+  seats: 1
+  constructor: MyString
+  weapons: MyString
+  maxspeed: MyString
+  size: MyString
+  user: one
+
+two:
+  name: MyString
+  category: MyString
+  power: MyString
+  seats: 1
+  constructor: MyString
+  weapons: MyString
+  maxspeed: MyString
+  size: MyString
+  user: two
