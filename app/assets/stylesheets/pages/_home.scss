@@ -1,1 +1,37 @@
 // Specific CSS for your home-page
+
+body {
+  background-color: white;
+}
+
+/* HEADER */
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 130px;
+}
+.header h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+}
+.header p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+}
+
+
+/* CONTENT CARD */
+
+.content-cards {
+  padding: 50px;
+  background-color: #EDF0F0;
+}
+
