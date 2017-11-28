@@ -5,12 +5,21 @@ class SpaceshipsController < ApplicationController
 
 
   def index
+
+    if params[:queries].present?
+      @spaceships = Spaceship.where("category = ?", params[:queries][0])
+      # @spaceships = Sapaceship.where("seats = ?", params[:queries][1])
+    else
+      @spaceships = Spaceship.all
+    end
+
     @spaceships = policy_scope(Spaceship)
     # pas de authorize et policy_scope volontaires
     # Likewise, Pundit also adds verify_policy_scoped to your controller.
     # This will raise an exception similar to verify_authorized.
     # However, it tracks if policy_scope is used instead of authorize.
     # This is mostly useful for controller actions like index which find collections with a scope and don't authorize individual instances.
+
   end
 
   def show
