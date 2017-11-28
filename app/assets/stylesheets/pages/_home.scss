@@ -16,6 +16,13 @@ body {
 
 /* HEADER */
 
+.title-header {
+  margin: 17px;
+    img {
+      margin-bottom: -30px;
+    }
+}
+
 .header {
   display: flex;
   align-items: center;
