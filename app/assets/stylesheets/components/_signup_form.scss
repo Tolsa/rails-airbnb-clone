@@ -6,6 +6,28 @@
   margin-top: 50px;
   border-radius: 3px;
   border: 1px solid rgba(255,255,255,0.5);
+
+  // box-shadow à tester c'est choupinou :
+  // box-shadow: 1px 1px 40px rgba(248, 247, 255, 0.2),
+  // -1px -1px 40px rgba(248, 247, 255, 0.2),
+  // inset 1px 1px 55px rgba(248,247,255,0.6),
+  // inset -1px -1px 50px rgba(248,247,255,0.6);
+  // width: 500px;
+  //
+  // à nester aussi:
+  //
+  // form {
+  //   margin: 0px 25px ;
+  // }
+  .form-group {
+    .help-block {
+      color: ghostwhite;
+      font-weight: 100;
+      font-size: 14px;
+    }
+  }
+
+
   h2 {
     font-size: 25px;
     font-weight: bold;
@@ -22,6 +44,8 @@
     margin-top: 5px;
     text-decoration: none;
     color: ghostwhite;
+    // à rajouter si on part sur le design galactique :
+    // margin-left: 23px;
     &:hover {
       text-shadow: 0 1px 15px rgba(248, 247, 255, 0.5), 0 0 15px rgba(248, 247, 255, 0.5);
     }
