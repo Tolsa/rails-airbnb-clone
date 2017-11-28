@@ -20,11 +20,6 @@ class SpaceshipsController < ApplicationController
     redirect_to spaceship_path(@spaceship)
   end
 
-
-  def search
-    index
-  end
-
   private
 
   def spaceship_params
