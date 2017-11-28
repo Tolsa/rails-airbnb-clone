@@ -1,16 +1,17 @@
 class SpaceshipPolicy < ApplicationPolicy
+
   def new?
     true
   end
 
-def create?
-  true
-end
+  def create?
+    true
+  end
 
 
-def destroy?
+  def destroy?
 
-end
+  end
 
   class Scope < Scope
     def resolve
