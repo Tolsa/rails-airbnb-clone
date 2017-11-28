@@ -1,1 +1,24 @@
-<h1> Vaisseaux </h1>
+<div class="content-search-page">
+  <div class="search-section">
+
+  </div>
+
+  <div class="container content-result">
+    <div class="row">
+      <div class="col-md-6 content-list">
+        <ul>
+        <% @spaceships.each do |spaceship| %>
+           <li style='list-style: none;'>
+            <%= spaceship.name %>
+            <%= spaceship.seats %>
+            <%= spaceship.category %>
+           </li>
+        <% end %>
+        </ul>
+      </div>
+      <div class="col-md-6 content-map">
+        <%= image_tag 'space.jpg', class: 'image-map' %>
+      </div>
+    </div>
+  </div>
+</div>

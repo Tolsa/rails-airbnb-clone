@@ -1,0 +1,26 @@
+/* SEARCH BAR*/
+
+.search-section {
+  border: 1px solid blue;
+  height: 50px;
+}
+
+
+/*SEARCH RESULT*/
+
+.content-result {
+  display: flex;
+  border: 1px solid red;
+}
+
+.content-list {
+  border: 2px solid green;
+}
+
+.content-map {
+  border: 2px solid yellow;
+  flex: 0 0 450px;
+  height: 100vh;
+  position: sticky !important;
+  top: 0 !important;
+}
