@@ -1,0 +1,18 @@
+.form-login {
+  background-color: rgba(255,255,255,0.2);
+  box-shadow: 3px 3px 21px rgba(248, 247, 255, 0.5), -3px -3px 25px rgba(248, 247, 255, 0.5);
+  padding: 10px 20px;
+  margin-top: 50px;
+  border-radius: 3px;
+  border: 1px solid rgba(255,255,255,0.5);
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 20px
+  }
+}
