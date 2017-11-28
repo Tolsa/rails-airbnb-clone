@@ -19,10 +19,11 @@ class SpaceshipsController < ApplicationController
     @spaceship.save
     redirect_to spaceship_path(@spaceship)
   end
-
-
-  def search
-    index
+  
+  def update
+    @spaceship = Spaceship.find(params[:id])
+    @spaceship.update(spaceship_params)
+    redirect_to spaceship_path(@spaceship)
   end
 
   private
