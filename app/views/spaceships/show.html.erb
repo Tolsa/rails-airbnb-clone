@@ -15,7 +15,10 @@
                     Catégorie :
                   </div>
                   <div class="sub-col-right">
-                    <%= @spaceship.category.capitalize %>
+                    <% if @spaceship.category? %>
+                      <%= @spaceship.category.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -23,7 +26,10 @@
                     Puissance :
                   </div>
                   <div class="sub-col-right">
-                    <%= @spaceship.power.capitalize %>
+                    <% if @spaceship.power? %>
+                      <%= @spaceship.power.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -33,7 +39,10 @@
                     Fabricant :
                   </div>
                   <div class="sub-col-right">
-                   <%= @spaceship.constructor.capitalize %>
+                    <% if @spaceship.constructor? %>
+                      <%= @spaceship.constructor.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -41,7 +50,10 @@
                     Armes :
                   </div>
                   <div class="sub-col-right">
-                    <%= @spaceship.weapons.capitalize %>
+                    <% if @spaceship.weapons? %>
+                      <%= @spaceship.weapons.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -51,7 +63,10 @@
                     Vitesse max :
                   </div>
                   <div class="sub-col-right">
-                    <%= @spaceship.maxspeed.capitalize %>
+                    <% if @spaceship.maxspeed? %>
+                      <%= @spaceship.maxspeed.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
                 <div class="col-sm-6">
@@ -59,7 +74,10 @@
                     Taille :
                   </div>
                   <div class="sub-col-right">
-                    <%= @spaceship.size.capitalize %>
+                    <% if @spaceship.size? %>
+                      <%= @spaceship.size.capitalize %>
+                      <%= "" %>
+                    <% end %>
                   </div>
                 </div>
               </div>
@@ -91,8 +109,8 @@
             </form> -->
 
             <%= simple_form_for [@spaceship, @reservation] do |f| %>
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
+              <%= f.input :start_date, label: "Date de début", as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, label: "Date de fin", as: :string, input_html: {class: "datepicker"} %>
               <%= f.button :submit, class: 'btn btn-primary' %>
             <% end %>
 

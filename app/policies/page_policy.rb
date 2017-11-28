@@ -1,4 +1,3 @@
 class PagePolicy < ApplicationPolicy
 
-
 end
