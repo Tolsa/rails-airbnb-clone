@@ -7,17 +7,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
-
-puts "Suppression de l'ancien seed..."
+p "destroying spaceships"
 Spaceship.destroy_all
 
-puts "Done..."
-puts "Creation nouveau seed..."
-
+p "fetching spaceships"
 5.times do
   user = User.create(email:Faker::Internet.email , password:Faker::Internet.password(8))
   Spaceship.create(name: Faker::StarWars.vehicle, user_id: user.id, category: ['Space', 'Earth', 'Sea', 'Air'].sample, seats: (1..10).to_a.sample)
 end
 
-puts "Fait ! création de #{Spaceship.count} vaisseaux"
-
+Spaceship.first.update_attributes(weapons: '2 blasters', category: 'Space', power: '200 parsec', seats: 5, constructor: 'jawa', maxspeed: '500km/h', size: '20m' )
