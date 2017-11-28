@@ -1,9 +1,5 @@
 .sign-up-form {
   color: ghostwhite;
-  .form-control:focus {
-  box-shadow: inset 0 1px 15px #f8f7ff, 0 0 15px #f8f7ff;
-  border: 0px;
-  }
   a {
     margin-top: 5px;
     text-decoration: none;
@@ -15,6 +11,11 @@
   .form-actions {
     margin-bottom: 10px;
   }
+}
+
+.form-control:focus {
+  box-shadow: inset 0 1px 15px #f8f7ff, 0 0 15px #f8f7ff;
+  border: 0px;
 }
 
 
