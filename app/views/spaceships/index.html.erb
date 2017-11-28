@@ -1,23 +1,25 @@
 <div class="content-search-page">
   <div class="search-section">
-
+  <p>SEARCH BAR</p>
   </div>
 
-  <div class="container content-result">
+  <div class="content-result">
     <div class="row">
       <div class="col-md-6 content-list">
-        <ul>
         <% @spaceships.each do |spaceship| %>
-           <li style='list-style: none;'>
-            <%= spaceship.name %>
-            <%= spaceship.seats %>
-            <%= spaceship.category %>
-           </li>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('spaceship-demo.jpg') %>);">
+            <div class="card-category"><%= spaceship.category %></div>
+            <div class="card-description">
+              <h2><%= spaceship.name %></h2>
+              <p><%= spaceship.seats %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>
+          </div>
         <% end %>
-        </ul>
       </div>
       <div class="col-md-6 content-map">
-        <%= image_tag 'space.jpg', class: 'image-map' %>
+        <%= image_tag 'space-test.jpg', class: 'image-map' %>
       </div>
     </div>
   </div>
