@@ -7,12 +7,90 @@
     <div class="row">
       <div class="col-sm-7">
         <div class="item" id="description-spaceship">
-          <p>A</p>
+            <h3>Caractéristiques</h3>
+            <div class="specs-spaceship-box">
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Catégorie :
+                  </div>
+                  <div class="sub-col-right">
+                    <%= @spaceship.category.capitalize %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Puissance :
+                  </div>
+                  <div class="sub-col-right">
+                    <%= @spaceship.power.capitalize %>
+                  </div>
+                </div>
+              </div>
+              <div class="row" id="middle-row">
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Fabricant :
+                  </div>
+                  <div class="sub-col-right">
+                   <%= @spaceship.constructor.capitalize %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Armes :
+                  </div>
+                  <div class="sub-col-right">
+                    <%= @spaceship.weapons.capitalize %>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Vitesse max :
+                  </div>
+                  <div class="sub-col-right">
+                    <%= @spaceship.maxspeed.capitalize %>
+                  </div>
+                </div>
+                <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Taille :
+                  </div>
+                  <div class="sub-col-right">
+                    <%= @spaceship.size.capitalize %>
+                  </div>
+                </div>
+              </div>
+            </div>
+
         </div>
       </div>
       <div class="col-sm-5">
         <div class="rent-spaceship">
-          <p>B</p>
+          <h3>Louer ce vaisseau</h3>
+          <div class="row">
+            <form class="form">
+              <label class="sr-only" for="inlineFormInputName2">Name</label>
+              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Adresse précise">
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar-check-o">
+                  </i>
+                </div>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+              </div>
+              <div class="input-group">
+                <div class="input-group-addon">
+                  <i class="fa fa-calendar-times-o">
+                  </i>
+                </div>
+                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+              </div>
+              <button type="submit" class="btn btn-primary">Rechercher</button>
+            </form>
+          </div>
         </div>
       </div>
     </div>

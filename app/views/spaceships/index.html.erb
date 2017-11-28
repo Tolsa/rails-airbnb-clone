@@ -1,55 +1,26 @@
-<div class="container header" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('cantina.jpg') %>) ;">
-  <div class="row content-header">
-    <div class="title-header">
-      <h1>Mos Eisley</h1>
-    </div>
-    <div class="search-header">
-      <form class="form-inline">
-        <label class="sr-only" for="inlineFormInputName2">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Adresse précise">
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-check-o">
-            </i>
+<div class="content-search-page">
+  <div class="search-section">
+  <p>SEARCH BAR</p>
+  </div>
+
+  <div class="content-result">
+    <div class="row">
+      <div class="col-md-6 content-list">
+        <% @spaceships.each do |spaceship| %>
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('spaceship-demo.jpg') %>);">
+            <div class="card-category"><%= spaceship.category %></div>
+            <div class="card-description">
+              <h2><%= spaceship.name %></h2>
+              <p><%= spaceship.seats %></p>
+            </div>
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <a class="card-link" href="#" ></a>
           </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-times-o">
-            </i>
-          </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-      </form>
-    </div>
-  </div>
-</div>
-
-<div class="content-cards">
-  <div class="title-cards text-center">
-    <p><strong>1,5 million d'utilisateurs et plus de 49 000 vaisseaux et véhicules de particuliers à louer dans la galaxie</strong></p>
-  </div>
-  <div class="cards">
-    <div class="card">
-      <!-- ...cards... -->
-    </div>
-  </div>
-</div>
-
-
-<div class="homepage_layer">
-    <h2 class="homepage_layer_title">
-      Explorez la galaxie
-    </h2>
-      <p>
-        Voyagez sans contrainte, choisissez le vaisseaux de vos rêves.
-      </p>
-      <div class="layer_images">
-        <%= image_tag "x-wing.png", style:'height: 120px'; %>
-        <%= image_tag "starspace-2.png", style:'height: 120px'; %>
-        <%= image_tag "ansel_hsiao_04.png", style:'height: 120px'; %>
-        <%= image_tag "Star-Wars-Imperial-Assault-Carrier-Vehicle.png", style:'height: 120px'; %>
+        <% end %>
       </div>
+      <div class="col-md-6 content-map">
+        <%= image_tag 'space-test.jpg', class: 'image-map' %>
+      </div>
+    </div>
+  </div>
 </div>
