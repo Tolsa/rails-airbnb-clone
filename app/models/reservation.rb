@@ -1,4 +1,4 @@
 class Reservation < ApplicationRecord
-  belongs_to :starship
+  belongs_to :spaceship
   belongs_to :user
 end

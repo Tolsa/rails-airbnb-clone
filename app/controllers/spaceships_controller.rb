@@ -7,6 +7,7 @@ class SpaceshipsController < ApplicationController
 
   def show
     @spaceship = Spaceship.find(params[:id])
+    @reservation = Reservation.new
   end
 
   def new
@@ -19,7 +20,7 @@ class SpaceshipsController < ApplicationController
     @spaceship.save
     redirect_to spaceship_path(@spaceship)
   end
-  
+
   def update
     @spaceship = Spaceship.find(params[:id])
     @spaceship.update(spaceship_params)
