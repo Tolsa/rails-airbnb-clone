@@ -4,5 +4,6 @@ class PagesController < ApplicationController
   after_action :verify_policy_scoped, except: :home
 
   def home
+    @spaceships = Spaceship.all
   end
 end

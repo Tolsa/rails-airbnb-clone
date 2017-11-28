@@ -1,10 +1,12 @@
 .card {
-  height: 175px;
+  height: 300px;
+  width: 275px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   background-size: cover !important;
   background-position: center;
   color: white;
   position: relative;
+
 }
 .card-user {
   position: absolute;
@@ -45,4 +47,20 @@
 }
 .card-link:hover {
   opacity: 0.1;
+}
+
+.content-banner-cards {
+  display: flex;
+  background-color: #ecf0f0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px;
+}
+
+.cards {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 35px;
 }

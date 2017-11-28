@@ -27,29 +27,40 @@
   </div>
 </div>
 
-<div class="content-cards">
+<div class="content-banner-cards">
   <div class="title-cards text-center">
     <p><strong>1,5 million d'utilisateurs et plus de 49 000 vaisseaux et véhicules de particuliers à louer dans la galaxie</strong></p>
-  </div>
   <div class="cards">
-    <div class="card">
-      <!-- ...cards... -->
+    <div class="row">
+    <% @spaceships[0..3].each do |spaceship| %>
+    <div class="col-xs-12 col-md-3">
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
+        <div class="card-category"><%= spaceship.category %></div>
+        <div class="card-description">
+          <h2><%= spaceship.name %></h2>
+          <p>Constucteur : <%= spaceship.constructor %></p>
+        </div>
+         <%= link_to "", spaceship_path(spaceship), class: 'card-link' %>
+      </div>
     </div>
+    <% end %>
+    </div>
+  </div>
   </div>
 </div>
 
 
 <div class="homepage_layer">
-    <h2 class="homepage_layer_title">
-      Explorez la galaxie
-    </h2>
-      <p>
-        Voyagez sans contrainte, choisissez le vaisseaux de vos rêves.
-      </p>
-      <div class="layer_images">
-        <%= image_tag "x-wing.png", style:'height: 120px'; %>
-        <%= image_tag "starspace-2.png", style:'height: 120px'; %>
-        <%= image_tag "ansel_hsiao_04.png", style:'height: 120px'; %>
-        <%= image_tag "Star-Wars-Imperial-Assault-Carrier-Vehicle.png", style:'height: 120px'; %>
-      </div>
+  <h2 class="homepage_layer_title">
+    Explorez la galaxie
+  </h2>
+  <p>
+    Voyagez sans contrainte, choisissez le vaisseaux de vos rêves.
+  </p>
+  <div class="layer_images">
+    <%= image_tag "x-wing.png", style:'height: 120px'; %>
+    <%= image_tag "starspace-2.png", style:'height: 120px'; %>
+    <%= image_tag "ansel_hsiao_04.png", style:'height: 120px'; %>
+    <%= image_tag "Star-Wars-Imperial-Assault-Carrier-Vehicle.png", style:'height: 120px'; %>
+  </div>
 </div>
