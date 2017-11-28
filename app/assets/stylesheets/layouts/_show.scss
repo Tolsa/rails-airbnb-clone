@@ -28,28 +28,109 @@
 
 #description-spaceship {
   margin-right: 30px;
-  background-color: rgba(255, 255, 255, 1);
-  height: 400px;
+  background-color: rgba(248, 247, 255,0);
+  height: auto;
+  padding: 0px 30px 46px 30px;
+  border-radius: 4px;
+  h3 {
+    color: ghostwhite;
+    padding: 20px 0px;
+  }
+  .specs-spaceship-box {
+    box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
+    border: 1px solid rgba(248, 247, 255, 0.5);
+    border-radius: 5px;
+  }
+  .row {
+    margin: 0px;
+    display: flex;
+    background-color: rgba(20,20,20,1);
+    border-radius: 5px;
+    p {
+    margin: 15px 0px;
+    }
+    .col-sm-6 {
+      display: flex;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      .sub-col-left {
+        font-size: 14px;
+        margin: 15px 0px;
+        width: 150px;
+        margin: 10px 0px;
+        color: darkgray;
+      }
+      .sub-col-right {
+        font-weight: bold;
+        font-size: 14px;
+        text-align: right;
+        width: 150px;
+        margin: 10px 0px;
+        color: gray;
+      }
+    }
+
+  }
+
+  #middle-row {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 0px;
+  }
+
 
 }
 
 .rent-spaceship-scroll {
+  box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
+  border: 1px solid rgba(248, 247, 255, 0.5);
+  border-radius: 5px;
+  padding: 0px 20px;
   width: 35%;
   height: 420px;
-  background-color: rgba(255, 255, 255, 1);
   position: fixed;
   top: 30px;
   -webkit-transition: 0.7s ease-in;
   -moz-transition: 0.7s ease-in;
   -o-transition: 0.7s ease-in;
   transition: 0.7s ease-in;
+  background-color: none;
+  h3 {
+    color: ghostwhite;
+  }
+  .row {
+    margin: 0px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+  }
 }
 
 .rent-spaceship {
+  box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
+  border: 1px solid rgba(248, 247, 255, 0.5);
+  border-radius: 5px;
+  padding: 0px 20px;
   top: 320px;
   width: 35%;
   height: 420px;
   position: fixed;
-  background-color: rgba(255, 255, 255, 1);
-
+  background-color: none;
+  h3 {
+    color: ghostwhite;
+  }
+  .row {
+    margin: 0px;
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+  }
 }
