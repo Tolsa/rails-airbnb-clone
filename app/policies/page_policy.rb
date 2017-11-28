@@ -1,2 +1,3 @@
 class PagePolicy < ApplicationPolicy
+
 end
