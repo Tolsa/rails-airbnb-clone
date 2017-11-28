@@ -15,7 +15,7 @@ class SpaceshipsController < ApplicationController
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
-    @spaceship.user = User.find(params[:user_id])
+    @spaceship.user = current_user
     @spaceship.save
     redirect_to spaceship_path(@spaceship)
   end
