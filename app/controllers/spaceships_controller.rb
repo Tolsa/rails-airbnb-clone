@@ -2,7 +2,12 @@ class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
-    @spaceships = Spaceship.all
+    if params[:queries].present?
+      @spaceships = Spaceship.where("category = ?", params[:queries][0])
+      # @spaceships = Sapaceship.where("seats = ?", params[:queries][1])
+    else
+      @spaceships = Spaceship.all
+    end
   end
 
   def show

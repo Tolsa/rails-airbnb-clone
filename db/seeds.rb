@@ -8,10 +8,16 @@
 
 require 'faker'
 
-50.times do
+puts "Suppression de l'ancien seed..."
+Spaceship.destroy_all
+
+puts "Done..."
+puts "Creation nouveau seed..."
+
+5.times do
   user = User.create(email:Faker::Internet.email , password:Faker::Internet.password(8))
-  Spaceship.create(name: Faker::StarWars.vehicle, user_id: user.id)
+  Spaceship.create(name: Faker::StarWars.vehicle, user_id: user.id, category: ['Space', 'Earth', 'Sea', 'Air'].sample, seats: (1..10).to_a.sample)
 end
 
-
+puts "Fait ! création de #{Spaceship.count} vaisseaux"
 
