@@ -1,6 +1,6 @@
 class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_spaceship, only: [:show, :edit, :update, :destroy]
+  before_action :set_spaceship, only: [:show, :edit, :update]
 
 
 
@@ -14,6 +14,7 @@ class SpaceshipsController < ApplicationController
   end
 
   def show
+    @reservation = Reservation.new
    # Optionnel car réalisé dans la méthode private plus bas
    # @spaceship = Spaceship.find(params[:id])
   end
@@ -31,11 +32,6 @@ class SpaceshipsController < ApplicationController
     redirect_to spaceship_path(@spaceship)
   end
 
-  def destroy
-    @spaceship.destroy
-    redirect_to spaceships_path
-  end 
-  
   def update
     @spaceship = Spaceship.find(params[:id])
     @spaceship.update(spaceship_params)

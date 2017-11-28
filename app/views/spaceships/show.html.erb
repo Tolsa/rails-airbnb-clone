@@ -71,9 +71,8 @@
         <div class="rent-spaceship">
           <h3>Louer ce vaisseau</h3>
           <div class="row">
-            <form class="form">
-              <label class="sr-only" for="inlineFormInputName2">Name</label>
-              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Adresse précise">
+
+<!--             <form class="form">
               <div class="input-group">
                 <div class="input-group-addon">
                   <i class="fa fa-calendar-check-o">
@@ -88,8 +87,17 @@
                 </div>
                 <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
               </div>
-              <button type="submit" class="btn btn-primary">Rechercher</button>
-            </form>
+              <button type="submit" class="btn btn-primary">Réserver</button>
+            </form> -->
+
+            <%= simple_form_for [@spaceship, @reservation] do |f| %>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+              <%= f.button :submit, class: 'btn btn-primary' %>
+            <% end %>
+
+
+
           </div>
         </div>
       </div>
