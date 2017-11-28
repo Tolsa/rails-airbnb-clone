@@ -7,11 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 require 'faker'
+p "destroying spaceships"
+Spaceship.destroy_all
 
+p "fetching spaceships"
 50.times do
   user = User.create(email:Faker::Internet.email , password:Faker::Internet.password(8))
   Spaceship.create(name: Faker::StarWars.vehicle, user_id: user.id)
 end
 
-
+Spaceship.first.update_attributes(weapons: '2 blasters', category: 'spaceship', power: '200 parsec', seats: 5, constructor: 'jawa', maxspeed: '500km/h', size: '20m' )
 
