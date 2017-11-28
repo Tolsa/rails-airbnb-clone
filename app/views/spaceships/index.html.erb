@@ -1,55 +1,24 @@
-<div class="container header" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('cantina.jpg') %>) ;">
-  <div class="row content-header">
-    <div class="title-header">
-      <h1>Mos Eisley</h1>
-    </div>
-    <div class="search-header">
-      <form class="form-inline">
-        <label class="sr-only" for="inlineFormInputName2">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Adresse précise">
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-check-o">
-            </i>
-          </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-times-o">
-            </i>
-          </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-      </form>
-    </div>
-  </div>
-</div>
+<div class="content-search-page">
+  <div class="search-section">
 
-<div class="content-cards">
-  <div class="title-cards text-center">
-    <p><strong>1,5 million d'utilisateurs et plus de 49 000 vaisseaux et véhicules de particuliers à louer dans la galaxie</strong></p>
   </div>
-  <div class="cards">
-    <div class="card">
-      <!-- ...cards... -->
-    </div>
-  </div>
-</div>
 
-
-<div class="homepage_layer">
-    <h2 class="homepage_layer_title">
-      Explorez la galaxie
-    </h2>
-      <p>
-        Voyagez sans contrainte, choisissez le vaisseaux de vos rêves.
-      </p>
-      <div class="layer_images">
-        <%= image_tag "x-wing.png", style:'height: 120px'; %>
-        <%= image_tag "starspace-2.png", style:'height: 120px'; %>
-        <%= image_tag "ansel_hsiao_04.png", style:'height: 120px'; %>
-        <%= image_tag "Star-Wars-Imperial-Assault-Carrier-Vehicle.png", style:'height: 120px'; %>
+  <div class="container content-result">
+    <div class="row">
+      <div class="col-md-6 content-list">
+        <ul>
+        <% @spaceships.each do |spaceship| %>
+           <li style='list-style: none;'>
+            <%= spaceship.name %>
+            <%= spaceship.seats %>
+            <%= spaceship.category %>
+           </li>
+        <% end %>
+        </ul>
       </div>
+      <div class="col-md-6 content-map">
+        <%= image_tag 'space.jpg', class: 'image-map' %>
+      </div>
+    </div>
+  </div>
 </div>
