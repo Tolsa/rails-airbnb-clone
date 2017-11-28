@@ -1,5 +1,5 @@
 class SpaceshipsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show, :search]
+  skip_before_action :authenticate_user!, only: [:index, :show]
 
   def index
     @spaceships = Spaceship.all
@@ -19,7 +19,7 @@ class SpaceshipsController < ApplicationController
     @spaceship.save
     redirect_to spaceship_path(@spaceship)
   end
-  
+
   def update
     @spaceship = Spaceship.find(params[:id])
     @spaceship.update(spaceship_params)
