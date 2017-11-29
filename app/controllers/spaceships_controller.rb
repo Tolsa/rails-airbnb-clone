@@ -41,7 +41,7 @@ class SpaceshipsController < ApplicationController
     if @spaceship.save
       redirect_to spaceship_path(@spaceship)
     else
-      redirect_to new_spaceship_path
+      render :new
     end
   end
 

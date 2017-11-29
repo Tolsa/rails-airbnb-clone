@@ -10,7 +10,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
 ActiveRecord::Schema.define(version: 20171129093407) do
 
   # These are extensions that must be enabled in order to support this database
@@ -19,12 +18,12 @@ ActiveRecord::Schema.define(version: 20171129093407) do
   create_table "reservations", force: :cascade do |t|
     t.string "start_date"
     t.string "end_date"
-    t.bigint "spaceship_id"
-    t.bigint "user_id"
+    t.bigint "spaceships_id"
+    t.bigint "users_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["spaceship_id"], name: "index_reservations_on_spaceship_id"
-    t.index ["user_id"], name: "index_reservations_on_user_id"
+    t.index ["spaceships_id"], name: "index_reservations_on_spaceships_id"
+    t.index ["users_id"], name: "index_reservations_on_users_id"
   end
 
   create_table "spaceships", force: :cascade do |t|
@@ -59,7 +58,7 @@ ActiveRecord::Schema.define(version: 20171129093407) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "reservations", "spaceships"
-  add_foreign_key "reservations", "users"
+  add_foreign_key "reservations", "spaceships", column: "spaceships_id"
+  add_foreign_key "reservations", "users", column: "users_id"
   add_foreign_key "spaceships", "users"
 end
