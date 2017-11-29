@@ -39,6 +39,25 @@
   }
 }
 
+.card-reservation {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  h2 {
+  font-size: 24px;
+  text-align: left;
+  margin: 10px 0px;
+  }
+  p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+  text-align: left;
+  margin: 8px 0px;
+  }
+}
+
+
 .card-link {
   position: absolute;
   top: 0;
