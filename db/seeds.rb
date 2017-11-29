@@ -15,6 +15,3 @@ p "fetching spaceships"
   user = User.create(email:Faker::Internet.email , password:Faker::Internet.password(8))
   Spaceship.create(name: Faker::StarWars.vehicle, prize: (100..100000).to_a.sample, user_id: user.id, category: ['Espace', 'Air', 'Aquatique', 'Terrestre'].sample, seats: (1..10).to_a.sample)
 end
-
-
-Spaceship.first.update_attributes(weapons: '2 blasters', prize: 24000, category: 'Espace', seats: 5, constructor: 'jawa', maxspeed: '500km/h', planet: 'Tatooine' )

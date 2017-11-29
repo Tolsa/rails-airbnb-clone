@@ -7,7 +7,6 @@ class Spaceship < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   validates :category, presence: true
   validates :planet, presence: true
-  validates :prize, presence: true
 
   has_many :reservations
 
