@@ -1,16 +1,16 @@
 <div class="container" id="container-create-spaceship">
   <div class="row">
-    <h1>Create a new Spaceship</h1>
+    <h1>Ajouter un nouveau vaisseau</h1>
     <div class="col-md-4 col-md-offset-4">
       <%= simple_form_for(@spaceship) do |f| %>
-        <%= f.input :name %>
-        <%= f.input :category %>
-        <%= f.input :seats %>
-        <%= f.input :constructor %>
-        <%= f.input :weapons %>
-        <%= f.input :maxspeed %>
-        <%= f.input :planet %>
-        <%= f.input :photo %>
+        <%= f.input :name, label: 'Nom de votre vaisseau' %>
+        <%= f.input :category, label: 'Categorie', :collection => %w[Espace Air Aquatique Terrestre] %>
+        <%= f.input :planet, label: 'Planète', :collection => %w[Alderaan Caamas Corellia Coruscant Dagobah Elom Hoth Mustafar Kamino Ryloth Tatooine Zonama Sekot] %>
+        <%= f.input :seats, label: 'Sièges' %>
+        <%= f.input :constructor, label: 'Marque' %>
+        <%= f.input :weapons, label: 'Armement' %>
+        <%= f.input :maxspeed, label: 'Vitesse max' %>
+        <%= f.input :photo, label: 'Photo de votre vaisseau' %>
         <%= f.input :photo_cache, as: :hidden %>
         <%= f.button :submit, class: 'btn btn-primary' %>
       <% end %>
