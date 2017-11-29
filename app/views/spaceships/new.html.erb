@@ -6,6 +6,7 @@
         <%= f.input :name, label: 'Nom de votre vaisseau' %>
         <%= f.input :category, label: 'Categorie', :collection => %w[Espace Air Aquatique Terrestre] %>
         <%= f.input :planet, label: 'Planète', :collection => %w[Alderaan Caamas Corellia Coruscant Dagobah Elom Hoth Mustafar Kamino Ryloth Tatooine Zonama Sekot] %>
+        <%= f.input :prize, label: 'Prix de location /jours' %>
         <%= f.input :seats, label: 'Sièges' %>
         <%= f.input :constructor, label: 'Marque' %>
         <%= f.input :weapons, label: 'Armement' %>
