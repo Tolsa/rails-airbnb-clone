@@ -21,6 +21,8 @@ gem 'devise'
 gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'nokogiri'
+gem 'open-uri'
 
 group :development, :test do
   gem 'pry-byebug'
