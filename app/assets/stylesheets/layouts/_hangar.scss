@@ -14,7 +14,11 @@
     .cards {
       padding: 60px 60px 60px 60px;
       .row {
-        margin: 0px;
+        margin: 0px 47px 0px 39px;
+        .col-md-3 {
+          width: 220px;
+          margin: 36px;
+        }
         .card {
           box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
           border: 2px solid rgba(248, 247, 255,0.4);
