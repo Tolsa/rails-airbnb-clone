@@ -34,10 +34,10 @@
     </div>
     <div class="cards">
       <div class="row">
-      <% @spaceships[0..3].each do |spaceship| %>
+      <% @spaceships.last(4).reverse.each do |spaceship| %>
       <div class="col-xs-12 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
-          <div class="card-category"><%= spaceship.category %></div>
+<!--           <div class="card-category"><%= spaceship.category %></div> -->
           <div class="card-description">
             <h2><%= spaceship.name %></h2>
             <p>Propriétaire : <%= spaceship.user.email[/(.*@)/].chomp("@") %></p>

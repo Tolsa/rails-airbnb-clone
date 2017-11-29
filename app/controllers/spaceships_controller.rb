@@ -38,7 +38,11 @@ class SpaceshipsController < ApplicationController
     authorize @spaceship
     @spaceship.user = current_user
     @spaceship.save
-    redirect_to spaceship_path(@spaceship)
+    if @spaceship.save
+      redirect_to spaceship_path(@spaceship)
+    else
+      redirect_to new_spaceship_path
+    end
   end
 
   def update
@@ -50,7 +54,7 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :category, :power, :seats, :constructor, :weapons, :maxspeed, :size, :user_id, :photo)
+    params.require(:spaceship).permit(:name, :category, :power, :seats, :constructor, :weapons, :maxspeed, :planet, :user_id, :photo)
   end
 
   def set_spaceship
