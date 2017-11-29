@@ -7,6 +7,11 @@
   padding: 130px;
   background-size: cover;
   height: 45vh;
+  border-bottom: 5px solid rgba(248, 247, 255,0.4);
+  box-shadow: inset 2px 2px 30px rgba(248, 247, 255,0.8);
+  img {
+    position: center;
+  }
   p {
   font-size: 25px;
   font-weight: lighter;
@@ -146,6 +151,10 @@
   width: 35%;
   height: 420px;
   background-color: none;
+  -webkit-transition: 0.7s ease-in;
+  -moz-transition: 0.7s ease-in;
+  -o-transition: 0.7s ease-in;
+  transition: 0.7s ease-in;
   h3 {
     color: ghostwhite;
   }
