@@ -16,4 +16,4 @@ p "fetching spaceships"
   Spaceship.create(name: Faker::StarWars.vehicle, user_id: user.id, category: ['Space', 'Earth', 'Sea', 'Air'].sample, seats: (1..10).to_a.sample)
 end
 
-Spaceship.first.update_attributes(weapons: '2 blasters', category: 'Space', power: '200 parsec', seats: 5, constructor: 'jawa', maxspeed: '500km/h', size: '20m' )
+Spaceship.first.update_attributes(weapons: '2 blasters', category: 'Space', seats: 5, constructor: 'jawa', maxspeed: '500km/h', planet: 'Tatooine' )
