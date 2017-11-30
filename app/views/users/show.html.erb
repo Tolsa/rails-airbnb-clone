@@ -1,26 +1,52 @@
-<div class="container" id="container-hangar">
-  <h1 class="id-hangar">Vos véhicules</h1>
+<div class="container-hangar">
+<!--   <h1 class="id-hangar">Vos véhicules</h1> -->
+
+<div class="tabs">
+  <%= link_to "Vos vaisseaux", user_path(@user), class: "tab active" %>
+  <%= link_to "Vaisseaux réservés", resas_user_path(@user), class: "tab" %>
+</div>
+
+
   <div class="content-banner-cards">
-
-
     <div class="cards">
       <div class="row">
       <% @user.spaceships.each do |spaceship| %>
       <div class="col-xs-12 col-sm-6 col-md-3">
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
           <div class="edit-icon">
-            <%= link_to root_path do  %>
+            <%= link_to edit_spaceship_path(spaceship) do  %>
               <%= image_tag 'edit.png', width: 30 %>
             <% end %>
           </div>
           <div class="delete-icon">
-            <%= link_to root_path do  %>
-              <%= image_tag 'delete.png', width: 30 %>
+            <%= link_to spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this wonderful spaceship? Are you sure?" } do %>
+            <%= image_tag 'delete.png', width: 30 %>
             <% end %>
           </div>
 
           <div class="card-description">
             <%= link_to spaceship.name, spaceship_path(spaceship) %>
+            <% if spaceship.available == "available" %>
+                <div class="available">
+                  <%= spaceship.available %>
+                </div>
+              <% elsif spaceship.available == "pending" %>
+                <div class="pending">
+                  <div>
+                    <%= link_to status_path(user_id: current_user, spaceship_id: spaceship.id, new_availability: "réservé"), method: :post do %>
+                    <p>Accepter</p>
+                    <% end %>
+                    <%= link_to status_path(user_id: current_user, spaceship_id: spaceship.id, new_availability: "available"), method: :post do %>
+                    <p>Refuser</p>
+                    <% end %>
+                  </div>
+                  <%= spaceship.available %>
+                </div>
+              <% else %>
+                <div class="reserved">
+                  <%= spaceship.available %>
+                </div>
+            <% end %>
           </div>
 
         </div>
@@ -28,43 +54,6 @@
 
       </div>
       <% end %>
-      </div>
-    </div>
-  </div>
-  <h1 class="id-hangar">Vos réservations</h1>
-  <div class="content-banner-cards">
-    <div class="cards">
-      <div class="row">
-      <% if @user.reservations != []  %>
-        <% @user.reservations.each do |reservation| %>
-        <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path reservation.spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
-            <div class="edit-icon">
-              <%= link_to root_path do  %>
-                <%= image_tag 'edit.png', width: 30 %>
-              <% end %>
-            </div>
-            <div class="delete-icon">
-              <%= link_to root_path do  %>
-                <%= image_tag 'delete.png', width: 30 %>
-              <% end %>
-            </div>
-
-            <div class="card-reservation">
-              <h2><%= reservation.spaceship.name %><h2>
-              <p>Début le :<%= reservation.start_date %></p>
-              <p>Fin le :<%= reservation.end_date %></p>
-            </div>
-
-          </div>
-
-
-        </div>
-        <% end %>
-      <% else  %>
-          <p style="color: ghostwhite; font-weight: lighter"> Vous n'avez aucune réservation </p>
-      <% end %>
-
       </div>
     </div>
   </div>
