@@ -19,7 +19,9 @@
             <% end %>
           </div>
           <div class="delete-icon">
-            <%= link_to image_tag("delete.png"), spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this wonderful spaceship? Are you sure?" } %>
+            <%= link_to spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this wonderful spaceship? Are you sure?" } do %>
+            <%= image_tag 'delete.png', width: 30 %>
+            <% end %>
           </div>
 
           <div class="card-description">
