@@ -1,0 +1,23 @@
+<div class="container" id="container-create-spaceship">
+  <div class="row">
+    <h1>Modifier le vaisseau</h1>
+    <div class="col-md-4 col-md-offset-4">
+      <%= simple_form_for(@spaceship) do |f| %>
+        <%= f.input :name, label: 'Nom de votre vaisseau', placeholder: @spaceship.name %>
+        <%= f.input :category, label: 'Categorie', :collection => %w[Espace Air Aquatique Terrestre], placeholder: @spaceship.category %>
+        <%= f.input :planet, label: 'Planète', :collection => %w[Alderaan Caamas Corellia Coruscant Dagobah Elom Hoth Mustafar Kamino Ryloth Tatooine Zonama Sekot], placeholder: @spaceship.planet %>
+        <%= f.input :price, label: 'Prix de location /jours', placeholder: @spaceship.price %>
+        <%= f.input :seats, label: 'Sièges', placeholder: @spaceship.seats %>
+        <%= f.input :constructor, label: 'Marque', placeholder: @spaceship.constructor %>
+        <%= f.input :weapons, label: 'Armement', placeholder: @spaceship.weapons %>
+        <%= f.input :maxspeed, label: 'Vitesse max', placeholder: @spaceship.maxspeed %>
+        <%= f.input :photo, label: 'Photo de votre vaisseau', placeholder: @spaceship.photo %>
+        <%= f.input :photo_cache, as: :hidden %>
+        <%= f.button :submit, class: 'btn btn-primary' %>
+      <% end %>
+      <div class="edit-ship">
+        <%= link_to "Retour au hangar", user_path(@spaceship.user_id)%>
+      </div>
+    </div>
+  </div>
+</div>
