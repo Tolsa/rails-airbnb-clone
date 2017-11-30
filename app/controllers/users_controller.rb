@@ -8,4 +8,9 @@ class UsersController < ApplicationController
   def spaceship_params
     params.require(:user).permit(:email)
   end
+
+  def resas
+    @user = User.find(params[:id])
+    authorize @user
+  end
 end
