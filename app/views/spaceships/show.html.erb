@@ -69,6 +69,17 @@
                     <% end %>
                   </div>
                 </div>
+                     <div class="col-sm-6">
+                  <div class="sub-col-left">
+                    Prix jour :
+                  </div>
+                  <div class="sub-col-right">
+                    <% if @spaceship.price? %>
+                      <%= @spaceship.price %> crédits
+                      <%= "" %>
+                    <% end %>
+                  </div>
+                </div>
               </div>
             </div>
 
