@@ -5,9 +5,9 @@
     </div>
     <div class="search-header">
       <%= form_tag spaceships_path, class: "form-home", method: :get do %>
-        <%= select_tag :planet, options_for_select(["Planète ?", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "item-form-header" %>
+        <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "item-form-header" %>
         <%= date_field_tag :start_date, nil, class: "item-form-header datepicker" %>
-        <%= date_field_tag :start_date, nil, class: "item-form-header datepicker" %>
+        <%= date_field_tag :end_date, nil, class: "item-form-header datepicker" %>
         <%= submit_tag 'Rechercher', class: "item-form-header btn btn-primary" %>
       <% end %>
     </div>
