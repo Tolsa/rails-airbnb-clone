@@ -10,7 +10,7 @@ class SpaceshipPolicy < ApplicationPolicy
 
 
   def destroy?
-
+    true
   end
 
   class Scope < Scope
