@@ -21,6 +21,7 @@ gem 'devise'
 gem 'pundit'
 gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
+gem 'pg_search'
 
 group :development, :test do
   gem 'pry-byebug'

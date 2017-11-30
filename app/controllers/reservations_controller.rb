@@ -5,15 +5,16 @@ class ReservationsController < ApplicationController
   end
 
   def create
+    @user = current_user
     @reservation = Reservation.new(reservation_params)
     authorize @reservation
     @spaceship = Spaceship.find(params[:spaceship_id])
-    @reservation.spaceship_id = @spaceship.id
+    @reservation.spaceship = @spaceship
     @reservation.user = current_user
     if @reservation.save
       redirect_to resas_user_path(current_user)
     else
-      redirect_to spaceships_path
+      redirect_to user_path(@user)
     end
 
   end

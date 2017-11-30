@@ -4,13 +4,15 @@ class SpaceshipsController < ApplicationController
 
 
 
+
   def index
 
-    if params[:queries].present?
-      @spaceships = Spaceship.where("category = ?", params[:queries][0])
-      # @spaceships = Sapaceship.where("seats = ?", params[:queries][1])
+    if params[:planet].present?
+      @spaceships_all = Spaceship.search_by_category_and_planet(params[:planet])
+    elsif params[:category].present?
+      @spaceships_all = Spaceship.search_by_category_and_planet(params[:category])
     else
-      @spaceships = Spaceship.all
+      @spaceships_all = Spaceship.all
     end
 
     @spaceships = policy_scope(Spaceship)
@@ -22,6 +24,7 @@ class SpaceshipsController < ApplicationController
 
   end
 
+
   def show
     @reservation = Reservation.new
    # Optionnel car réalisé dans la méthode private plus bas
@@ -32,6 +35,13 @@ class SpaceshipsController < ApplicationController
     @spaceship = Spaceship.new
     authorize @spaceship
   end
+
+  def edit
+    @spaceship = Spaceship.new
+    authorize @spaceship
+    @spaceship = Spaceship.find(params[:id])
+  end
+
 
   def create
     @spaceship = Spaceship.new(spaceship_params)
