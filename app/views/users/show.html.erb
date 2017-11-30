@@ -31,7 +31,6 @@
                   <%= spaceship.available %>
                 </div>
               <% elsif spaceship.available == "en attente" %>
-                <div class="pending">
                   <div>
                     <%= link_to status_path(user_id: current_user, spaceship_id: spaceship.id, new_availability: "réservé"), method: :post do %>
                     <p>Accepter</p>
@@ -40,8 +39,9 @@
                     <p>Refuser</p>
                     <% end %>
                   </div>
-                  <%= spaceship.available %>
-                </div>
+                  <div class="pending">
+                    <%= spaceship.available %>
+                  </div>
               <% else %>
                 <div class="reserved">
                   <%= spaceship.available %>
