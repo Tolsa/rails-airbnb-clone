@@ -40,6 +40,7 @@
           .card-description {
             bottom: 22px;
             width: 100px;
+            text-shadow: 1px 1px 15px rgba(0,0,0,0.6), -1px -1px 15px rgba(0,0,0,0.6);
             a {
               text-decoration: none;
               color: ghostwhite;
@@ -54,32 +55,70 @@
             right: 50px;
             }
           }
-          .delete-icon {
-            a {
-            position: absolute;
-            bottom: 22px;
-            right: 11px;
-            }
-          }
         }
       }
     }
   }
 }
 
+.card-reservation {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 260px;
+}
+
+.delete-icon {
+  position: absolute;
+  bottom: 22px;
+  right: 11px;
+}
 
 .available {
-  color: green;
+  color: lawngreen;
+  border: 1px solid rgba(8, 240, 6,0.3);
+  padding: 0px 10px;
+  margin-top: 11px;
+  border-radius: 3px;
+  background: rgba(0, 20, 0, 0.4);
+  box-shadow: inset 0px 0px 14px rgba(8, 240, 6,0.6);
+  width: 110px;
+  text-align: center;
 }
 
 .pending {
-  color: yellow;
+  color: rgba(255, 225, 0, 1);
+  text-shadow: inset 0px 0px 10px orange;
+  border: 1px solid rgba(255, 225, 0, 0.3);
+  padding: 0px 10px;
+  margin-top: 11px;
+  border-radius: 3px;
+  background: rgba(100, 100, 0, 0.4);
+  box-shadow: inset 0px 0px 14px rgba(255, 225, 1, 0.6);
+  width: 110px;
+  text-align: center;
 }
 
 .reserved {
-  color: blue;
+  color: cornflowerblue;
+  border: 1px solid rgba(98, 142, 240 ,0.3);
+  padding: 0px 10px;
+  margin-top: 11px;
+  border-radius: 3px;
+  background: rgba(0, 0, 100, 0.4);
+  box-shadow: inset 0px 0px 14px rgba(98, 142, 240, 0.6);
+  width: 110px;
+  text-align: center;
 }
 
 .cancelled {
-  color: red;
+  color: rgba(224,70,40,1);
+  border: 1px solid rgba(224, 13, 6, 0.3);
+  padding: 0px 10px;
+  margin-top: 11px;
+  border-radius: 3px;
+  background: rgba(40, 0, 0, 0.4);
+  box-shadow: inset 0px 0px 14px rgba(224, 13, 6, 0.6);
+  width: 110px;
+  text-align: center;
 }
