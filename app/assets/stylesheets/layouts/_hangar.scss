@@ -54,19 +54,24 @@
             right: 50px;
             }
           }
-          .delete-icon {
-            a {
-            position: absolute;
-            bottom: 22px;
-            right: 11px;
-            }
-          }
         }
       }
     }
   }
 }
 
+.card-reservation {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    width: 260px;
+}
+
+.delete-icon {
+  position: absolute;
+  bottom: 22px;
+  right: 11px;
+}
 
 .available {
   color: green;

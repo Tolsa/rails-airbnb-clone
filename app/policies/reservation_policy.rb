@@ -9,7 +9,7 @@ class ReservationPolicy < ApplicationPolicy
 
 
   def destroy?
-
+    true
   end
 
   class Scope < Scope
