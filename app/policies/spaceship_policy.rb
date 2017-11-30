@@ -8,16 +8,19 @@ class SpaceshipPolicy < ApplicationPolicy
     true
   end
 
-
-  def destroy?
-
-  end
-
   def edit?
     true
   end
 
   def update?
+    true
+  end
+
+  def destroy?
+    true
+  end
+
+  def edit?
     true
   end
 

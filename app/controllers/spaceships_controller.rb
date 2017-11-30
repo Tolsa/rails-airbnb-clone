@@ -1,6 +1,6 @@
 class SpaceshipsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
-  before_action :set_spaceship, only: [:show, :edit, :update]
+  before_action :set_spaceship, only: [:show, :edit, :update, :destroy]
 
 
 
@@ -57,20 +57,35 @@ class SpaceshipsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
   def update
     @spaceship = Spaceship.find(params[:id])
-    @spaceship.update(spaceship_params)
-    redirect_to spaceship_path(@spaceship)
+    authorize @spaceship
+    if @spaceship.save
+      redirect_to spaceship_path(@spaceship)
+    else
+      render :new
+    end
+  end
+
+
+  def destroy
+    @spaceship = Spaceship.find(params[:id])
+    @user = current_user
+    @spaceship.destroy
+    redirect_to user_path(@user)
   end
 
   private
 
-  def spaceship_params
-    params.require(:spaceship).permit(:name, :category, :price, :seats, :constructor, :weapons, :maxspeed, :planet, :user_id, :photo)
-  end
+    def spaceship_params
+      params.require(:spaceship).permit(:name, :category, :price, :seats, :constructor, :weapons, :maxspeed, :planet, :user_id, :photo)
+    end
 
-  def set_spaceship
-    @spaceship = Spaceship.find(params[:id])
-    authorize @spaceship
+    def set_spaceship
+      @spaceship = Spaceship.find(params[:id])
+      authorize @spaceship
+    end
   end
-end

@@ -8,7 +8,7 @@
   validates :category, presence: true
   validates :planet, presence: true
 
-  has_many :reservations
+  has_many :reservations, :dependent => :destroy
 
   mount_uploader :photo, PhotoUploader
 

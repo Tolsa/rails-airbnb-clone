@@ -19,13 +19,34 @@
             <% end %>
           </div>
           <div class="delete-icon">
-            <%= link_to root_path do  %>
-              <%= image_tag 'delete.png', width: 30 %>
+            <%= link_to spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this wonderful spaceship? Are you sure?" } do %>
+            <%= image_tag 'delete.png', width: 30 %>
             <% end %>
           </div>
 
           <div class="card-description">
             <%= link_to spaceship.name, spaceship_path(spaceship) %>
+            <% if spaceship.available == "available" %>
+                <div class="available">
+                  <%= spaceship.available %>
+                </div>
+              <% elsif spaceship.available == "pending" %>
+                <div class="pending">
+                  <div>
+                    <%= link_to status_path(user_id: current_user, spaceship_id: spaceship.id, new_availability: "réservé"), method: :post do %>
+                    <p>Accepter</p>
+                    <% end %>
+                    <%= link_to status_path(user_id: current_user, spaceship_id: spaceship.id, new_availability: "available"), method: :post do %>
+                    <p>Refuser</p>
+                    <% end %>
+                  </div>
+                  <%= spaceship.available %>
+                </div>
+              <% else %>
+                <div class="reserved">
+                  <%= spaceship.available %>
+                </div>
+            <% end %>
           </div>
 
         </div>
