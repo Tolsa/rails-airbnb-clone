@@ -34,6 +34,9 @@
           box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.5);
           border: 2px solid rgba(248, 247, 255,0.4);
           border-radius: 5px;
+          &.first {
+            box-shadow: 3px 3px 21px rgba(248, 247, 255, 0.5), -3px -3px 25px rgba(248, 247, 255, 0.5);
+          }
           .card-description {
             bottom: 22px;
             width: 100px;

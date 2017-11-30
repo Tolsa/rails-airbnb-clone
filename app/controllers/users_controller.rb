@@ -11,6 +11,9 @@ class UsersController < ApplicationController
 
   def resas
     @user = User.find(params[:id])
+    @reservations ||= @user.reservations.order(updated_at: :desc)
     authorize @user
   end
+
+
 end

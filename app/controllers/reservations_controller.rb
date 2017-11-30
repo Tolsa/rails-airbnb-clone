@@ -12,7 +12,7 @@ class ReservationsController < ApplicationController
     @reservation.spaceship = @spaceship
     @reservation.user = current_user
     if @reservation.save
-      redirect_to spaceship_path(@spaceship)
+      redirect_to resas_user_path(current_user)
     else
       redirect_to user_path(@user)
     end
