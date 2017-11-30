@@ -73,7 +73,7 @@
                   <div class="sub-col-left">
                     Prix jour :
                   </div>
-                  <div class="sub-col-right">
+                  <div class="sub-col-right", id="prix_jour">
                     <% if @spaceship.price? %>
                       <%= @spaceship.price %> crédits
                       <%= "" %>
@@ -114,7 +114,9 @@
               <%= f.button :submit, class: 'btn btn-primary' %>
             <% end %>
 
+            <div id="total_price" class="text-center">
 
+            </div>
 
           </div>
         </div>
