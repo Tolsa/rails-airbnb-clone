@@ -13,4 +13,5 @@ Rails.application.routes.draw do
     end
   end
 
+  post 'status', to: 'users#change_status'
 end
