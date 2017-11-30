@@ -1,4 +1,4 @@
-class Spaceship < ApplicationRecord
+ class Spaceship < ApplicationRecord
   belongs_to :user
 
   CATEGORIES_SHIP = ["Espace", "Air", "Aquatique", "Terrestre"]
