@@ -18,12 +18,12 @@
           <% end %>
           " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path reservation.spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
             <div class="edit-icon">
-            <%= link_to edit_spaceship_path(spaceship) do  %>
+            <%= link_to edit_spaceship_path(reservation.spaceship) do  %>
               <%= image_tag 'edit.png', width: 30 %>
             <% end %>
           </div>
             <div class="delete-icon">
-            <%= link_to spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
+            <%= link_to spaceship_path(reservation.spaceship), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
             <%= image_tag 'delete.png', width: 30 %>
             <% end %>
           </div>
