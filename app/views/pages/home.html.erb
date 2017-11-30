@@ -4,40 +4,12 @@
       <%= image_tag "mos-eisley-test.png", alt: "Mos Eisley picture" %>
     </div>
     <div class="search-header">
-      <form class="form-inline">
-            <label for="exampleFormControlSelect1"></label>
-            <select class="form-control" id="exampleFormControlSelect1">
-              <option>Planète ?</option>
-              <option>Alderaan</option>
-              <option>Caamas</option>
-              <option>Corellia</option>
-              <option>Coruscant</option>
-              <option>Dagobah</option>
-              <option>Elom</option>
-              <option>Hoth</option>
-              <option>Mustafar</option>
-              <option>Kamino</option>
-              <option>Ryloth</option>
-              <option>Tatooine</option>
-              <option>Zonama</option>
-              <option>Sekot</option>
-            </select>
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-check-o">
-            </i>
-          </div>
-          <input class="form-control datepicker" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <div class="input-group">
-          <div class="input-group-addon">
-            <i class="fa fa-calendar-times-o">
-            </i>
-          </div>
-          <input class="form-control datepicker" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-        </div>
-        <button type="submit" class="btn btn-primary">Rechercher</button>
-      </form>
+      <%= form_tag spaceships_path, class: "form-home", method: :get do %>
+        <%= select_tag :planet, options_for_select(["Planète ?", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "item-form-header" %>
+        <%= date_field_tag :start_date, nil, class: "item-form-header datepicker" %>
+        <%= date_field_tag :start_date, nil, class: "item-form-header datepicker" %>
+        <%= submit_tag 'Rechercher', class: "item-form-header btn btn-primary" %>
+      <% end %>
     </div>
   </div>
 </div>
