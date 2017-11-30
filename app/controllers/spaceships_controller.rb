@@ -59,6 +59,13 @@ class SpaceshipsController < ApplicationController
   end
 
   def update
+    @spaceship = Spaceship.find(params[:id])
+    authorize @spaceship
+    if @spaceship.save
+      redirect_to spaceship_path(@spaceship)
+    else
+      render :new
+    end
   end
 
 
