@@ -9,3 +9,5 @@ initUpdateNavbarOnScroll();
 if (document.querySelector('.rent-spaceship')){ initUpdateRentOnScroll();};
 flatpickr(".datepicker", {});
 loadDynamicBannerText();
+
+import 'totalPrice';
