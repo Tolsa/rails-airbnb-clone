@@ -1,3 +1,38 @@
+#container-spaceship {
+  height: 140vh;
+}
+
+
+.header-spaceship {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+  padding: 130px;
+  background-size: cover;
+  height: 45vh;
+  border-bottom: 5px solid rgba(248, 247, 255,0.4);
+  box-shadow: inset 2px 2px 30px rgba(248, 247, 255,0.8);
+  img {
+    position: center;
+  }
+  p {
+  font-size: 25px;
+  font-weight: lighter;
+  color: rgb(255, 255, 255);
+  opacity: 0.6;
+  margin-bottom: 30px;
+  }
+  h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.2);
+  }
+}
+
+
+
 .middle-block {
   display: flex;
   align-items: center;
@@ -82,6 +117,7 @@
 }
 
 .rent-spaceship-scroll {
+  -webkit-box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
   box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
   border: 1px solid rgba(248, 247, 255, 0.5);
   border-radius: 5px;
@@ -114,12 +150,16 @@
   box-shadow: 3px 3px 10px rgba(248, 247, 255, 0.3), -3px -3px 10px rgba(248, 247, 255, 0.3);
   border: 1px solid rgba(248, 247, 255, 0.5);
   border-radius: 5px;
+  position: fixed;
   padding: 0px 20px;
-  top: 320px;
+  top: 425px;
   width: 35%;
   height: 420px;
-  position: fixed;
   background-color: none;
+  -webkit-transition: 0.7s ease-in;
+  -moz-transition: 0.7s ease-in;
+  -o-transition: 0.7s ease-in;
+  transition: 0.7s ease-in;
   h3 {
     color: ghostwhite;
   }

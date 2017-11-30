@@ -1,0 +1,15 @@
+#container-create-spaceship {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  background-image: asset-url('space.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 180vh;
+  .row {
+    h1 {
+      color: ghostwhite;
+      text-align: center;
+    }
+  }
+}

@@ -1,3 +1,5 @@
+/*HOME*/
+
 .card {
   height: 300px;
   width: 275px;
@@ -6,35 +8,56 @@
   background-position: center;
   color: white;
   position: relative;
+  box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 
 }
 .card-user {
   position: absolute;
-  right: 10px;
-  top: 10px;
   width: 40px;
   border-radius: 50%;
 }
+
 .card-category {
   position: absolute;
-  top: 10px;
-  left: 10px;
   font-size: 15px;
   text-transform: uppercase;
 }
+
 .card-description {
   position: absolute;
   bottom: 10px;
   left: 10px;
-}
-.card-description h2 {
+  h2 {
   font-size: 24px;
-}
-.card-description p {
+  text-align: left;
+  }
+  p {
   font-size: 14px;
   opacity: 0.7;
   font-weight: lighter;
+  text-align: left;
+  }
 }
+
+.card-reservation {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  h2 {
+  font-size: 24px;
+  text-align: left;
+  margin: 10px 0px;
+  }
+  p {
+  font-size: 14px;
+  opacity: 0.7;
+  font-weight: lighter;
+  text-align: left;
+  margin: 8px 0px;
+  }
+}
+
+
 .card-link {
   position: absolute;
   top: 0;
@@ -44,23 +67,39 @@
   z-index: 2;
   background: black;
   opacity: 0;
-}
-.card-link:hover {
+  &:hover {
   opacity: 0.1;
+  }
 }
 
 .content-banner-cards {
-  display: flex;
   background-color: #ecf0f0;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 60px;
+}
+
+.title-cards {
+  padding-bottom: 37px;
+  padding-top: 42px;
+  background-color: white;
 }
 
 .cards {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 35px;
+  padding: 60px 0px 60px 0px;
+  .row {
+    width: unset;
+  }
+}
+
+
+/*INDEX*/
+
+.card-index {
+  height: 175px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  background-size: cover !important;
+  background-position: center;
+  color: white;
+  position: relative;
 }

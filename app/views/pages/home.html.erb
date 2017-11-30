@@ -1,25 +1,40 @@
 <div class="container header" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path('cantina.jpg') %>) ;">
   <div class="row content-header">
     <div class="title-header">
-      <h1>Mos Eisley</h1>
+      <%= image_tag "mos-eisley-test.png", alt: "Mos Eisley picture" %>
     </div>
     <div class="search-header">
       <form class="form-inline">
-        <label class="sr-only" for="inlineFormInputName2">Name</label>
-        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInputName2" placeholder="Adresse précise">
+            <label for="exampleFormControlSelect1"></label>
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>Planète ?</option>
+              <option>Alderaan</option>
+              <option>Caamas</option>
+              <option>Corellia</option>
+              <option>Coruscant</option>
+              <option>Dagobah</option>
+              <option>Elom</option>
+              <option>Hoth</option>
+              <option>Mustafar</option>
+              <option>Kamino</option>
+              <option>Ryloth</option>
+              <option>Tatooine</option>
+              <option>Zonama</option>
+              <option>Sekot</option>
+            </select>
         <div class="input-group">
           <div class="input-group-addon">
             <i class="fa fa-calendar-check-o">
             </i>
           </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+          <input class="form-control datepicker" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
         </div>
         <div class="input-group">
           <div class="input-group-addon">
             <i class="fa fa-calendar-times-o">
             </i>
           </div>
-          <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
+          <input class="form-control datepicker" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
         </div>
         <button type="submit" class="btn btn-primary">Rechercher</button>
       </form>
@@ -27,27 +42,30 @@
   </div>
 </div>
 
-<div class="content-banner-cards">
-  <div class="title-cards text-center">
-    <p><strong>1,5 million d'utilisateurs et plus de 49 000 vaisseaux et véhicules de particuliers à louer dans la galaxie</strong></p>
-  <div class="cards">
-    <div class="row">
-    <% @spaceships[0..3].each do |spaceship| %>
-    <div class="col-xs-12 col-md-3">
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
-        <div class="card-category"><%= spaceship.category %></div>
-        <div class="card-description">
-          <h2><%= spaceship.name %></h2>
-          <p>Constucteur : <%= spaceship.constructor %></p>
+
+  <div class="content-banner-cards">
+    <div class="title-cards text-center">
+      <span id="banner-typed-text"></span>
+    </div>
+  </div>
+
+    <div class="cards">
+      <div class="row">
+      <% @spaceships.last(4).reverse.each do |spaceship| %>
+      <div class="col-xs-12 col-md-3">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
+<!--           <div class="card-category"><%= spaceship.category %></div> -->
+          <div class="card-description">
+            <h2><%= spaceship.name %></h2>
+            <p>Propriétaire : <%= spaceship.user.email[/(.*@)/].chomp("@") %></p>
+          </div>
+           <%= link_to "", spaceship_path(spaceship), class: 'card-link' %>
         </div>
-         <%= link_to "", spaceship_path(spaceship), class: 'card-link' %>
+      </div>
+      <% end %>
       </div>
     </div>
-    <% end %>
-    </div>
   </div>
-  </div>
-</div>
 
 
 <div class="homepage_layer">

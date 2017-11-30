@@ -11,10 +11,17 @@ body {
   background-image: asset-url('space.jpg');
   background-size: cover;
   background-position: center;
-  height: 150vh;
+  height: 100%;
 }
 
 /* HEADER */
+
+.title-header {
+  margin: 17px;
+    img {
+      margin-bottom: -30px;
+    }
+}
 
 .header {
   display: flex;
@@ -24,6 +31,7 @@ body {
   text-align: center;
   padding: 130px;
   background-size: cover;
+  height: 75vh;
 }
 .header h1 {
   font-size: 50px;
@@ -40,7 +48,22 @@ body {
 
 /* CONTENT CARD */
 
+.content-header {
+  margin: 0px 0px 30px 0px;
+  padding: 0px;
+}
+
 .content-cards {
   padding: 50px;
   background-color: #EDF0F0;
+}
+
+.typed-cursor {
+  font-size: 20px;
+}
+
+
+.title-cards span {
+  font-size: 30px;
+  font-weight: bold;
 }

@@ -1,13 +1,20 @@
 <div class="content-search-page">
   <div class="search-section">
-  <p>SEARCH BAR</p>
+  <%= form_tag(spaceships_path, method: :get) do %>
+    <%= label_tag(:category, "Category : ") %>
+    <%= select_tag "queries[]", options_for_select(Spaceship::CATEGORIES_SHIP) %>
+     <%= label_tag(:seats, "Seats : ") %>
+      <%= select_tag "queries[]", options_for_select([1,2,3,4,5,6,7,8,9,10]) %>
+
+    <%= submit_tag 'Rechercher' %>
+  <% end %>
   </div>
 
   <div class="content-result">
     <div class="row">
       <div class="col-md-6 content-list">
         <% @spaceships.each do |spaceship| %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path('spaceship-demo.jpg') %>);">
+          <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
             <div class="card-category"><%= spaceship.category %></div>
             <div class="card-description">
               <h2><%= spaceship.name %></h2>
@@ -24,3 +31,8 @@
     </div>
   </div>
 </div>
+
+
+<!--  label_tag(:start_date, "Début : ") %> date_field(:reservations, :start_date) label_tag(:category, "Fin : ") %> date_field(:reservations, :end_date) %>
+ label_tag(:seats, "Seats : ") %> number_field(:seats, in: 1..50) %>
+ -->
