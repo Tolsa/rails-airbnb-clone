@@ -11,6 +11,7 @@ class UsersController < ApplicationController
 
   def resas
     @user = User.find(params[:id])
+    @reservations ||= @user.reservations.order(updated_at: :desc)
     authorize @user
   end
 
@@ -21,5 +22,6 @@ class UsersController < ApplicationController
     redirect_to user_path(current_user)
     skip_authorization
   end
+
 
 end

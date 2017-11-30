@@ -9,24 +9,30 @@
     <div class="cards">
       <div class="row">
       <% if @user.reservations != []  %>
-        <% @user.reservations.each do |reservation| %>
+        <% @reservations.each_with_index do |reservation, index| %>
         <div class="col-xs-12 col-sm-6 col-md-3">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path reservation.spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
+          <div class="
+          card
+          <% if index == 0 %>
+            first
+          <% end %>
+          " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path reservation.spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
             <div class="edit-icon">
-              <%= link_to root_path do  %>
-                <%= image_tag 'edit.png', width: 30 %>
-              <% end %>
-            </div>
+            <%= link_to edit_spaceship_path(spaceship) do  %>
+              <%= image_tag 'edit.png', width: 30 %>
+            <% end %>
+          </div>
             <div class="delete-icon">
-              <%= link_to root_path do  %>
-                <%= image_tag 'delete.png', width: 30 %>
-              <% end %>
-            </div>
+            <%= link_to spaceship_path(spaceship), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
+            <%= image_tag 'delete.png', width: 30 %>
+            <% end %>
+          </div>
 
             <div class="card-reservation">
               <h2><%= reservation.spaceship.name %></h2>
               <p>Début le :<%= reservation.start_date %></p>
               <p>Fin le :<%= reservation.end_date %></p>
+
             </div>
 
           </div>
