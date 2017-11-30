@@ -16,7 +16,7 @@
   include PgSearch
 
   pg_search_scope :search_by_category_and_planet,
-  against: [ :category, :planet ],
+  against: [ :category, :planet],
   using: {
     tsearch: { prefix: true }
   }

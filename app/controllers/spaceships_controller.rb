@@ -11,6 +11,8 @@ class SpaceshipsController < ApplicationController
       @spaceships_all = Spaceship.search_by_category_and_planet(params[:planet])
     elsif params[:category].present?
       @spaceships_all = Spaceship.search_by_category_and_planet(params[:category])
+    elsif params[:seats].present?
+      @spaceships_all = Spaceship.where("#{:seats} >= #{params[:seats]}")
     else
       @spaceships_all = Spaceship.all
     end

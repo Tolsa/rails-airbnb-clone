@@ -1,38 +1,45 @@
 <div class="content-search-page">
-  <div class="search-section">
-  <%= form_tag spaceships_path, method: :get do %>
-  <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]) %>
-  <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]) %>
-  <%= submit_tag "Rechercher" %>
-
-
-
-<% end %>
-
-
-  </div>
-
-  <div class="content-result">
-    <div class="row">
+    <div class="row display">
       <div class="col-md-6 content-list">
         <% @spaceships_all.each do |spaceship| %>
           <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
             <div class="card-category"><%= spaceship.category %></div>
             <div class="card-description">
               <h2><%= spaceship.name %></h2>
-              <p><%= spaceship.seats %> <%= spaceship.planet %></p>
+              <p><%= spaceship.seats %> <%= spaceship.planet %> <%= spaceship.price %></p>
             </div>
 
             <a class="card-link" href="#" ></a>
           </div>
         <% end %>
       </div>
-      <div class="col-md-6 content-map">
-        <%= image_tag 'space-test.jpg', class: 'image-map' %>
+
+      <div class="col-md-6 content-search">
+        <ul>
+          <%= form_tag spaceships_path, method: :get do %>
+            <li class="li-planet">
+              <p>Planète</p>
+              <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "planet" %>
+            </li>
+            <li>
+              <p>Catégorie</p>
+              <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]), class: "category" %>
+            </li>
+            <li>
+              <p>Combien serez-vous ?</p>
+              <%= number_field_tag :seats,
+               params[:seats], class: "seats" %>
+            </li>
+            <li>
+              <%= submit_tag "Rechercher", class: "btn btn-search" %>
+            </li>
+          <% end %>
+        </ul>
       </div>
     </div>
-  </div>
 </div>
+
+
 
 
 <!--  label_tag(:start_date, "Début : ") %> date_field(:reservations, :start_date) label_tag(:category, "Fin : ") %> date_field(:reservations, :end_date) %>
