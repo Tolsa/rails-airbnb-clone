@@ -15,5 +15,13 @@ class UsersController < ApplicationController
     authorize @user
   end
 
+  def change_status
+    @spaceship = Spaceship.find(params[:spaceship_id])
+    @spaceship.available = params[:new_availability]
+    @spaceship.save
+    redirect_to user_path(current_user)
+    skip_authorization
+  end
+
 
 end
