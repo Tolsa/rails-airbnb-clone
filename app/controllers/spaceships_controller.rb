@@ -45,6 +45,13 @@ class SpaceshipsController < ApplicationController
     end
   end
 
+  def edit
+  end
+
+  def update
+  end
+
+
   def destroy
     @spaceship = Spaceship.find(params[:id])
     @user = current_user
