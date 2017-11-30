@@ -1,26 +1,28 @@
 <div class="content-search-page">
   <div class="search-section">
-  <%= form_tag(spaceships_path, method: :get) do %>
-    <%= label_tag(:category, "Category : ") %>
-    <%= select_tag "queries[]", options_for_select(Spaceship::CATEGORIES_SHIP) %>
-     <%= label_tag(:seats, "Seats : ") %>
-      <%= select_tag "queries[]", options_for_select([1,2,3,4,5,6,7,8,9,10]) %>
+  <%= form_tag spaceships_path, method: :get do %>
+  <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]) %>
+  <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]) %>
+  <%= submit_tag "Rechercher" %>
 
-    <%= submit_tag 'Rechercher' %>
-  <% end %>
+
+
+<% end %>
+
+
   </div>
 
   <div class="content-result">
     <div class="row">
       <div class="col-md-6 content-list">
-        <% @spaceships.each do |spaceship| %>
+        <% @spaceships_all.each do |spaceship| %>
           <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
             <div class="card-category"><%= spaceship.category %></div>
             <div class="card-description">
               <h2><%= spaceship.name %></h2>
-              <p><%= spaceship.seats %></p>
+              <p><%= spaceship.seats %> <%= spaceship.planet %></p>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+
             <a class="card-link" href="#" ></a>
           </div>
         <% end %>

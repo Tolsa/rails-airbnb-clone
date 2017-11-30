@@ -4,13 +4,15 @@ class SpaceshipsController < ApplicationController
 
 
 
+
   def index
 
-    if params[:queries].present?
-      @spaceships = Spaceship.where("category = ?", params[:queries][0])
-      # @spaceships = Sapaceship.where("seats = ?", params[:queries][1])
+    if params[:planet].present?
+      @spaceships_all = Spaceship.search_by_category_and_planet(params[:planet])
+    elsif params[:category].present?
+      @spaceships_all = Spaceship.search_by_category_and_planet(params[:category])
     else
-      @spaceships = Spaceship.all
+      @spaceships_all = Spaceship.all
     end
 
     @spaceships = policy_scope(Spaceship)
@@ -21,6 +23,7 @@ class SpaceshipsController < ApplicationController
     # This is mostly useful for controller actions like index which find collections with a scope and don't authorize individual instances.
 
   end
+
 
   def show
     @reservation = Reservation.new
