@@ -36,6 +36,13 @@ class SpaceshipsController < ApplicationController
     authorize @spaceship
   end
 
+  def edit
+    @spaceship = Spaceship.new
+    authorize @spaceship
+    @spaceship = Spaceship.find(params[:id])
+  end
+
+
   def create
     @spaceship = Spaceship.new(spaceship_params)
     authorize @spaceship
@@ -57,7 +64,7 @@ class SpaceshipsController < ApplicationController
   private
 
   def spaceship_params
-    params.require(:spaceship).permit(:name, :category, :prize, :seats, :constructor, :weapons, :maxspeed, :planet, :user_id, :photo)
+    params.require(:spaceship).permit(:name, :category, :price, :seats, :constructor, :weapons, :maxspeed, :planet, :user_id, :photo)
   end
 
   def set_spaceship
