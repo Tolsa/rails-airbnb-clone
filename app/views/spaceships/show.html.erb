@@ -109,8 +109,8 @@
             </form> -->
 
             <%= simple_form_for [@spaceship, @reservation] do |f| %>
-              <%= f.input :start_date, label: "Date de début", as: :string, input_html: {class: "datepicker"} %>
-              <%= f.input :end_date, label: "Date de fin", as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :start_date, label: "Date de début", as: :string, input_html: {class: "datepicker", id: 'start_date'}  %>
+              <%= f.input :end_date, label: "Date de fin", as: :string, input_html: {class: "datepicker", id: 'end_date' }  %>
               <%= f.button :submit, class: 'btn btn-primary' %>
             <% end %>
 
