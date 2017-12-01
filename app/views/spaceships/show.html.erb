@@ -110,23 +110,6 @@
           <h3>Louer ce vaisseau</h3>
           <div class="row">
 
-<!--             <form class="form">
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar-check-o">
-                  </i>
-                </div>
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-              </div>
-              <div class="input-group">
-                <div class="input-group-addon">
-                  <i class="fa fa-calendar-times-o">
-                  </i>
-                </div>
-                <input class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text"/>
-              </div>
-              <button type="submit" class="btn btn-primary">Réserver</button>
-            </form> -->
 
             <%= simple_form_for [@spaceship, @reservation] do |f| %>
               <%= f.input :start_date, label: "Date de début", as: :string, input_html: {class: "datepicker", id: 'start_date'}  %>
