@@ -15,7 +15,8 @@ const computePrice = () => {
     console.log("") ;
   }
   else{
-    document.getElementById("total_price").innerHTML = '<p> Total: ' + total_price + ' crédits </p>';
+    const price_final = new Intl.NumberFormat().format(total_price)
+    document.getElementById("total_price").innerHTML = '<p> Total: ' + price_final + ' crédits </p>';
   }
 }
 
