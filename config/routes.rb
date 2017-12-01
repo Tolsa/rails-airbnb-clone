@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :spaceships, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :reservations, only: [ :create, :new ]
+    resources :reviews, only: :create
   end
   resources :reservations, only: [:destroy]
 
