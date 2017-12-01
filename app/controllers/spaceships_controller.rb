@@ -21,6 +21,17 @@ class SpaceshipsController < ApplicationController
       @spaceships_all = Spaceship.all
     end
 
+
+    if params[:planet].present? && params[:category].present?
+      @spaceships_all = Spaceship.where("planet = ? and category = ?", "#{params[:planet]}", "#{params[:category]}")
+    elsif params[:category].present? && params[:seats].present?
+      @spaceships_all = Spaceship.where("category = ? and seats >= ?", "#{params[:category]}", "#{params[:seats]}")
+    elsif params[:planet].present? && params[:seats].present?
+      @spaceships_all = Spaceship.where("planet = ? and seats >= ?", "#{params[:planet]}", "#{params[:seats]}")
+    elsif params[:planet].present? && params[:category].present? && params[:seats].present?
+      @spaceships_all = Spaceship.where("planet = ? and category = ? and seats >= ?", "#{params[:planet]}", "#{params[:category]}", "#{params[:seats]}")
+    end
+
     @spaceships = policy_scope(Spaceship)
     # pas de authorize et policy_scope volontaires
     # Likewise, Pundit also adds verify_policy_scoped to your controller.
