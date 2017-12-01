@@ -13,4 +13,6 @@ if (document.querySelector('.rent-spaceship')){ initUpdateRentOnScroll();};
 flatpickr(".datepicker", {});
 loadDynamicBannerText();
 
+import 'listener';
+
 import 'totalPrice';

@@ -113,7 +113,7 @@
             <%= simple_form_for [@spaceship, @reservation] do |f| %>
               <%= f.input :start_date, label: "Date de début", as: :string, input_html: {class: "datepicker", id: 'start_date'}  %>
               <%= f.input :end_date, label: "Date de fin", as: :string, input_html: {class: "datepicker", id: 'end_date' }  %>
-              <%= f.button :submit, class: 'btn btn-primary' %>
+              <%= f.button :submit, class: 'btn btn-primary', id: "hover-sound", data: { sound_url: asset_path('racer.wav')} %>
             <% end %>
 
             <div id="total_price" class="text-center">
