@@ -6,9 +6,6 @@ import { initUpdateNavbarOnScroll } from '../components/navbar';
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
-import { initUpdateSearch } from '../searchmenu';
-initUpdateSearch();
-
 import { loadDynamicBannerText } from '../components/banner';
 initUpdateNavbarOnScroll();
 
