@@ -1,26 +1,54 @@
+
+
+.content-search-page {
+  height: 100vh;
+}
+
 /* SEARCH BAR*/
 
-.search-section {
-  border: 1px solid blue;
-  height: 250px;
+.btn-search {
+  background-color: $orange;
+  color: white;
+}
+
+.planet {
+  border: 1px solid transparent;
+  padding: 25px 25px;
+}
+
+.li-planet {
+  padding-top: 50px;
+}
+
+.category {
+  border: 1px solid transparent;
+}
+
+.seats {
+  border: 1px solid #F8F8F8;
+  border-radius: 1px;
+  background-color: transparent;
 }
 
 
 /*SEARCH RESULT*/
 
-.content-result {
-  display: flex;
-  border: 1px solid red;
-}
-
 .content-list {
-  border: 2px solid green;
+  flex: 0 0 60%;
 }
 
-.content-map {
-  border: 2px solid yellow;
-  flex: 0 0 450px;
-  height: 100vh;
+.content-search {
+  flex: 0 0 40%;
   position: sticky !important;
   top: 0 !important;
 }
+
+.content-search ul {
+  list-style-type: none;
+}
+
+.content-search li {
+  padding-bottom: 25px;
+}
+
+

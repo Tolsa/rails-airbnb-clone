@@ -17,19 +17,33 @@
             first
           <% end %>
           " style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path reservation.spaceship.photo,  height: 300, width: 400, crop: :fill %>);">
-            <div class="edit-icon">
-            <%= link_to edit_spaceship_path(reservation.spaceship) do  %>
-              <%= image_tag 'edit.png', width: 30 %>
-            <% end %>
-          </div>
-            <div class="delete-icon">
-            <%= link_to spaceship_path(reservation.spaceship), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
-            <%= image_tag 'delete.png', width: 30 %>
-            <% end %>
-          </div>
 
             <div class="card-reservation">
               <h2><%= reservation.spaceship.name %></h2>
+              <% if reservation.spaceship.available == "available" %>
+                  <div class="delete-icon">
+                    <%= link_to reservation_path(reservation), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
+                    <%= image_tag 'delete.png', width: 30 %>
+                    <% end %>
+                  </div>
+                <div class="cancelled">
+                  cancelled
+                </div>
+              <% elsif reservation.spaceship.available == "en attente" %>
+                <div class="delete-icon">
+                  <%= link_to reservation_path(reservation), method: :delete, data: { confirm: "Delete this booking? Are you sure stupid sith?" } do %>
+                  <%= image_tag 'delete.png', width: 30 %>
+                  <% end %>
+                </div>
+                <div class="pending">
+                  <%= reservation.spaceship.available %>
+                </div>
+              <% else %>
+                <div class="reserved">
+                  accepté
+                </div>
+            <% end %>
+
               <p>Début le :<%= reservation.start_date %></p>
               <p>Fin le :<%= reservation.end_date %></p>
 
@@ -41,7 +55,7 @@
         </div>
         <% end %>
       <% else  %>
-          <p style="color: ghostwhite; font-weight: lighter"> Vous n'avez aucune réservation </p>
+          <p style="color: ghostwhite; font-weight: lighter; color: ghostwhite; font-weight: lighter; position: absolute; left: 11%; margin-top: 22px;"> Vous n'avez aucune réservation </p>
       <% end %>
 
       </div>
