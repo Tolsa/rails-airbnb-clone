@@ -6,9 +6,10 @@
     <div class="search-header">
       <%= form_tag spaceships_path, class: "form-home", method: :get do %>
         <%= select_tag :planet, options_for_select(["Planète ?", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "item-form-header" %>
+
         <%= date_field_tag :start_date, nil, class: "item-form-header" %>
         <%= date_field_tag :end_date, nil, class: "item-form-header" %>
-        <%= submit_tag 'Rechercher', class: "item-form-header btn btn-primary" %>
+        <%= submit_tag 'Rechercher', class: "item-form-header btn btn-primary", id: "hover-sound", data: { sound_url: asset_path('laser-saber.mp3')} %>
       <% end %>
     </div>
   </div>
