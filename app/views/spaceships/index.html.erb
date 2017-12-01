@@ -3,56 +3,35 @@
       <div class="row display">
         <div class="col-md-6 content-list">
           <% @spaceships_all.each do |spaceship| %>
-            <%= link_to spaceship_path(spaceship) do %>
-              <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
-                <div class="card-category"><%= spaceship.category %></div>
-                <div class="card-description">
-                  <h2><%= spaceship.name %></h2>
-                   <div class="specs">
-                    <p>Sièges : <strong><%= spaceship.seats %></strong></p>
-                    <p>Planète : <strong><%= spaceship.planet %></strong></p>
-                    <p>Prix : <strong><%= spaceship.price %></strong></p>
+            <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
+              <div class="card-category"><%= spaceship.category %></div>
+              <div class="card-description">
+                <h2><%= spaceship.name %></h2>
+                 <div class="specs">
+                  <p>Sièges : <%= spaceship.seats %></p>
+                  <p>Planète : <%= spaceship.planet %></p>
+                  <p>Prix : <%= spaceship.price %></p>
 
-                    <% if spaceship.available == "available" %>
-                      <div class="available">
+                  <% if spaceship.available == "available" %>
+                    <div class="available">
+                      <%= spaceship.available %>
+                    </div>
+                  <% elsif spaceship.available == "en attente" %>
+                      <div class="pending">
                         <%= spaceship.available %>
                       </div>
-                    <% elsif spaceship.available == "en attente" %>
-                        <div class="pending">
-                          <%= spaceship.available %>
-                        </div>
-                    <% else %>
-                      <div class="reserved">
-                        <%= spaceship.available %>
-                      </div>
-                    <% end %>
-                   </div>
-                </div>
+                  <% else %>
+                    <div class="reserved">
+                      <%= spaceship.available %>
+                    </div>
+                <% end %>
+
+
+                 </div>
               </div>
-            <% end %>
-          <% end %>
 
-
-      <div class="col-md-6 content-search">
-        <ul>
-          <%= form_tag spaceships_path, method: :get do %>
-            <li class="li-planet">
-              <p>Planète</p>
-              <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "planet" %>
-            </li>
-            <li>
-              <p>Catégorie</p>
-              <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]), class: "category" %>
-            </li>
-            <li>
-              <p>Combien serez-vous ?</p>
-              <%= number_field_tag :seats,
-               params[:seats], class: "seats" %>
-            </li>
-            <li>
-              <%= submit_tag "Rechercher", class: "btn btn-search" %>
-              <%= link_to "Voir tous", spaceships_path, class: "btn btn-search" %>
-            </li>
+              <a class="card-link" href="#" ></a>
+            </div>
           <% end %>
         </div>
 
@@ -75,6 +54,7 @@
                 </li>
                 <li>
                   <%= submit_tag "Rechercher", class: "btn btn-primary" %>
+                  <%= link_to "Voir tous", spaceships_path, class: "btn btn-primary"%>
                 </li>
               <% end %>
             </ul>
