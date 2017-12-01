@@ -31,8 +31,27 @@
                    </div>
                 </div>
 
-              </div>
-            <% end %>
+
+      <div class="col-md-6 content-search">
+        <ul>
+          <%= form_tag spaceships_path, method: :get do %>
+            <li class="li-planet">
+              <p>Planète</p>
+              <%= select_tag :planet, options_for_select(["", "Alderaan", "Caamas", "Corellia", "Coruscant", "Dagobah", "Elom", "Hoth", "Mustafar", "Kamino", "Ryloth", "Tatooine", "Zonama", "Sekot" ]), class: "planet" %>
+            </li>
+            <li>
+              <p>Catégorie</p>
+              <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]), class: "category" %>
+            </li>
+            <li>
+              <p>Combien serez-vous ?</p>
+              <%= number_field_tag :seats,
+               params[:seats], class: "seats" %>
+            </li>
+            <li>
+              <%= submit_tag "Rechercher", class: "btn btn-search" %>
+              <%= link_to "Voir tous", spaceships_path, class: "btn btn-search" %>
+            </li>
           <% end %>
         </div>
 
