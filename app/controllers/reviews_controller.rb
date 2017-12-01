@@ -3,11 +3,19 @@ class ReviewsController < ApplicationController
      @spaceship = Spaceship.find(params[:spaceship_id])
      @review = Review.new(review_params)
      @review.restaurant = @spaceship
+     @review.save
      if @review.save
-       redirect_to spaceship_path(@spaceship)
-     else
-       render 'spaceships/show'
-     end
+           respond_to do |format|
+             format.html { redirect_to spaceship_path(@spaceship) }
+             format.js  # <-- will render `app/views/reviews/create.js.erb`
+           end
+         else
+           respond_to do |format|
+             format.html { render 'spaceships/show' }
+             format.js  # <-- idem
+           end
+         end
+
    end
 
    private
