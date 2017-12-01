@@ -1,6 +1,8 @@
  class Spaceship < ApplicationRecord
   include PgSearch
   belongs_to :user
+  has_many :reviews, dependent: :destroy
+
 
   # CATEGORY_SHIP = ["Espace", "Air", "Aquatique", "Terrestre"]
   # validates_inclusion_of :category, in: CATEGORY_SHIP
