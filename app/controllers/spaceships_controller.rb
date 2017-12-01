@@ -33,6 +33,7 @@ class SpaceshipsController < ApplicationController
 
   def show
     @reservation = Reservation.new
+    @review = Review.new
    # Optionnel car réalisé dans la méthode private plus bas
    # @spaceship = Spaceship.find(params[:id])
   end
