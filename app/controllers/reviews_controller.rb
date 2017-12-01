@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def create
      @spaceship = Spaceship.find(params[:spaceship_id])
      @review = Review.new(review_params)
-     @review.restaurant = @spaceship
+     @review.spaceship = @spaceship
      @review.save
      if @review.save
            respond_to do |format|
