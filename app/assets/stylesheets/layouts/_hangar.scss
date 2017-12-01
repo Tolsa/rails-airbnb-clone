@@ -24,6 +24,7 @@
     .cards {
       padding: 60px 60px 0px 60px;
       justify-content: left;
+      align-items: unset;
       .row {
         margin: 0px 47px 0px 39px;
         .col-md-3 {
@@ -125,4 +126,14 @@
 
 #cards-resas {
   height: 100vh;
+  .row {
+    top: 28%;
+  }
+}
+
+#cards-myships {
+  height: 100vh;
+  .row {
+    top: 28%;
+  }
 }
