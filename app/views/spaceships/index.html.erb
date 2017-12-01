@@ -4,7 +4,7 @@
         <div class="col-md-6 content-list">
           <% @spaceships_all.each do |spaceship| %>
             <%= link_to spaceship_path(spaceship) do %>
-              <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
+              <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url(<%= image_path spaceship.photo %>);">
                 <div class="card-category"><%= spaceship.category %></div>
                 <div class="card-description">
                   <h2><%= spaceship.name %></h2>
