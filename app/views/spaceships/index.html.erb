@@ -48,7 +48,7 @@
                   <%= select_tag :category, options_for_select(["", "Espace", "Air", "Aquatique", "Terrestre"]), class: "category" %>
                 </li>
                 <li>
-                  <p>Combien serez-vous ?</p>
+                  <p id ="seats">Combien serez-vous ?</p>
                   <%= number_field_tag :seats,
                    params[:seats], class: "seats" %>
                 </li>
