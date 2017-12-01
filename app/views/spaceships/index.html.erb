@@ -3,35 +3,35 @@
       <div class="row display">
         <div class="col-md-6 content-list">
           <% @spaceships_all.each do |spaceship| %>
-            <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
-              <div class="card-category"><%= spaceship.category %></div>
-              <div class="card-description">
-                <h2><%= spaceship.name %></h2>
-                 <div class="specs">
-                  <p>Sièges : <%= spaceship.seats %></p>
-                  <p>Planète : <%= spaceship.planet %></p>
-                  <p>Prix : <%= spaceship.price %></p>
+            <%= link_to spaceship_path(spaceship) do %>
+              <div class="card-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= image_path spaceship.photo %>);">
+                <div class="card-category"><%= spaceship.category %></div>
+                <div class="card-description">
+                  <h2><%= spaceship.name %></h2>
+                   <div class="specs">
+                    <p>Sièges : <%= spaceship.seats %></p>
+                    <p>Planète : <%= spaceship.planet %></p>
+                    <p>Prix : <%= spaceship.price %></p>
 
-                  <% if spaceship.available == "available" %>
-                    <div class="available">
-                      <%= spaceship.available %>
-                    </div>
-                  <% elsif spaceship.available == "en attente" %>
-                      <div class="pending">
+                    <% if spaceship.available == "available" %>
+                      <div class="available">
                         <%= spaceship.available %>
                       </div>
-                  <% else %>
-                    <div class="reserved">
-                      <%= spaceship.available %>
-                    </div>
-                <% end %>
+                    <% elsif spaceship.available == "en attente" %>
+                        <div class="pending">
+                          <%= spaceship.available %>
+                        </div>
+                    <% else %>
+                      <div class="reserved">
+                        <%= spaceship.available %>
+                      </div>
+                  <% end %>
 
 
-                 </div>
+                   </div>
+                </div>
               </div>
-
-              <a class="card-link" href="#" ></a>
-            </div>
+            <% end %>
           <% end %>
         </div>
 
