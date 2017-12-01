@@ -22,3 +22,7 @@ const computePrice = () => {
 [start, end].forEach((input) => {
   input.addEventListener(("change"), computePrice);
 })
+
+
+
+

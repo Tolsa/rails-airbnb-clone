@@ -1,12 +1,17 @@
 .footer {
-  background: #F4F4F4;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100px;
-  padding: 0px 50px;
-  color: rgba(0,0,0,0.3);
-  top: 100vh;
+    background: #F4F4F4;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    height: 100px;
+    padding: 0px 50px;
+    color: rgba(0, 0, 0, 0.3);
+    width: 100%;
 }
 .footer-links {
   display: flex;
