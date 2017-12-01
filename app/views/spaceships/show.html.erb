@@ -85,6 +85,26 @@
 
         </div>
       </div>
+
+      <div class="col-sm-12">
+        <div class="reviews">
+          <h2>
+            <%= pluralize @spaceship.reviews.size, "review" %>
+          </h2>
+
+          <div id="reviews">
+            <% if @spaceship.reviews.blank? %>
+              Be the first to leave a review for <%= @spaceship.name %>
+            <% else %>
+              <% @spaceship.reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+              <% end %>
+            <% end %>
+          </div>
+        </div>
+        <%= render 'reviews/form', spaceship: @spaceship, review: @review %>
+      </div>
+
       <div class="col-sm-5">
         <div class="rent-spaceship">
           <h3>Louer ce vaisseau</h3>
