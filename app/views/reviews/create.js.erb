@@ -1,9 +1,13 @@
 // Here you generate *JavaScript* that would be executed in the browser
 // On veut ajouter une review
-var reviews = document.getElementById('reviews');
-reviews.insertAdjacentHTML("beforeend", "<= j render "reviews/show", review: @review %>");
-
 // On veut cleaner le formulaire (l'input)
 
-var form = document.getElementById('new_review');
-form.innerHTML = "<= j render "reviews/show", spaceship: @spaceship, review: Review.new %>"
+<% if @review.errors.any? %>
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', spaceship: @spaceship, review: @review %>";
+<% else %>
+  const newReviewForm = document.getElementById('new_review');
+  const reviews = document.getElementById('reviews');
+  reviews.insertAdjacentHTML("beforeend", "<%= j render 'reviews/show', review: @review %>");
+  newReviewForm.innerHTML = "<%= j render 'reviews/form', spaceship: @spaceship, review: Review.new %>";
+<% end %>

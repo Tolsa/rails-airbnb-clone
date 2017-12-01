@@ -10,18 +10,17 @@ class ReviewsController < ApplicationController
      @review = Review.new(review_params)
      authorize @review
      @review.spaceship = @spaceship
-     @review.save
      if @review.save
-           respond_to do |format|
-             format.html { redirect_to spaceship_path(@spaceship) }
-             format.js  # <-- will render `app/views/reviews/create.js.erb`
-           end
-         else
-           respond_to do |format|
-             format.html { render 'spaceships/show' }
-             format.js  # <-- idem
-           end
-         end
+       respond_to do |format|
+         format.html { redirect_to spaceship_path(@spaceship) }
+         format.js  # <-- will render `app/views/reviews/create.js.erb`
+       end
+     else
+       respond_to do |format|
+         format.html { render 'spaceships/show' }
+         format.js  # <-- idem
+       end
+     end
 
    end
 
