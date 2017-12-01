@@ -6,7 +6,7 @@
     <%= link_to "Vaisseaux réservés", resas_user_path(@user), class: "tab active" %>
   </div>
   <div class="content-banner-cards">
-    <div class="cards">
+    <div class="cards" id="cards-resas">
       <div class="row">
       <% if @user.reservations != []  %>
         <% @reservations.each_with_index do |reservation, index| %>
@@ -55,7 +55,7 @@
         </div>
         <% end %>
       <% else  %>
-          <p style="color: ghostwhite; font-weight: lighter; color: ghostwhite; font-weight: lighter; position: absolute; left: 11%; margin-top: 22px;"> Vous n'avez aucune réservation </p>
+          <p style="color: ghostwhite; font-weight: lighter; color: ghostwhite; font-weight: lighter; position: absolute; left: 11%; top: 33%;"> Vous n'avez aucune réservation </p>
       <% end %>
 
       </div>
