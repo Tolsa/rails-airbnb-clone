@@ -82,11 +82,6 @@
                 </div>
               </div>
             </div>
-
-        </div>
-      </div>
-
-      <div class="col-sm-12">
         <div class="reviews">
           <h2>
             <%= pluralize @spaceship.reviews.size, "review" %>
@@ -101,7 +96,11 @@
               <% end %>
             <% end %>
           </div>
+
         </div>
+      </div>
+
+
         <%= render 'reviews/form', spaceship: @spaceship, review: @review %>
       </div>
 
