@@ -1,11 +1,17 @@
 import "bootstrap";
+
 import { initUpdateRentOnScroll } from '../rentmenu';
 import { initUpdateNavbarOnScroll } from '../components/navbar';
+
 import flatpickr from 'flatpickr';
 import 'flatpickr/dist/flatpickr.min.css';
 
+import { initUpdateSearch } from '../searchmenu';
+initUpdateSearch();
+
 import { loadDynamicBannerText } from '../components/banner';
 initUpdateNavbarOnScroll();
+
 if (document.querySelector('.rent-spaceship')){ initUpdateRentOnScroll();};
 flatpickr(".datepicker", {});
 loadDynamicBannerText();
